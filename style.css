@@ -78,6 +78,28 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
+/* ================== Navbar LOGO =============== */
+/* --- Navbar Logo Styles --- */
+
+.logo-img {
+    height: 50px; /* Sets the height, width adjusts automatically */
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease; /* Smooth resize effect */
+}
+
+/* Optional: Make logo slightly smaller when scrolling */
+.navbar-scrolled .logo-img {
+    height: 45px; 
+}
+
+/* Mobile Adjustment */
+@media (max-width: 991px) {
+    .logo-img {
+        height: 40px; /* Smaller on mobile to fit the bar */
+    }
+}
+
 /* Links Styling */
 .nav-link {
   font-family: "Poppins", sans-serif;
