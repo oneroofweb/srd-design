@@ -237,6 +237,9 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0px 10px;
   }
 }
+.custom-caption p{
+    display: none;
+}
 
 /* ================== Service Section ==================== */
 /* --- Services Styling --- */
@@ -446,10 +449,11 @@ h1, h2, h3, h4, h5, h6 {
     to { opacity: 1; transform: translateY(0); }
 }
 
+.gallery-card h5{
+    color: #fff !important;
+}
 /* =================== Contact Us ==================== */
-/* --- Contact Section Styles --- */
 
-/* Left Box (Gradient Background) */
 .contact-info-box {
     background: var(--gradient-main); /* Uses your Blue Gradient */
     overflow: hidden;
