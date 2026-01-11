@@ -356,3 +356,92 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
   }
 }
+
+/* ================= Gallery Section =============== */
+/* --- Gallery Card Styles --- */
+.gallery-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 280px; 
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* --- LIGHTBOX & SCROLL FIXES --- */
+
+/* 1. Allow Scrolling for Large Images */
+#lightboxModal .modal-dialog {
+    max-width: 900px; /* Wider on desktop */
+    margin: 1.75rem auto;
+}
+
+#lightboxModal .modal-body img {
+    width: 100%;
+    height: auto; /* Allow height to grow so it scrolls */
+    display: block;
+}
+
+/* 2. Fixed Close Button for Mobile */
+.btn-close-custom {
+    position: fixed; /* Fixed relative to viewport */
+    top: 20px;
+    right: 20px;
+    z-index: 1060; /* Higher than modal */
+    background-color: white;
+    color: #333;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.btn-close-custom:hover {
+    background-color: var(--accent-red);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* Animation */
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

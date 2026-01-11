@@ -24,3 +24,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// ==================== Gallery Section =======================
+// Load More Gallery
+document.addEventListener("DOMContentLoaded", function () {
+    const loadMoreGalleryBtn = document.getElementById('loadMoreGalleryBtn');
+    
+    if(loadMoreGalleryBtn) {
+        loadMoreGalleryBtn.addEventListener('click', function() {
+            const hiddenGalleryItems = document.querySelectorAll('.hidden-gallery');
+            hiddenGalleryItems.forEach(function(item) {
+                item.classList.remove('d-none');
+                item.classList.add('fade-in-up');
+            });
+            this.style.display = 'none';
+        });
+    }
+});
+
+// Update Lightbox Image
+function updateLightbox(imgElement) {
+    const lightboxImage = document.getElementById('lightboxImage');
+    lightboxImage.src = imgElement.src;
+}
