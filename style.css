@@ -81,22 +81,37 @@ h1, h2, h3, h4, h5, h6 {
 /* ================== Navbar LOGO =============== */
 /* --- Navbar Logo Styles --- */
 
+/* --- Navbar Brand (Logo + Text) --- */
+
+.navbar-brand {
+    font-size: 32px !important; /* Large Text Size */
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+}
+
 .logo-img {
-    height: 50px; /* Sets the height, width adjusts automatically */
+    height: 50px; /* Logo Height */
     width: auto;
     object-fit: contain;
-    transition: all 0.3s ease; /* Smooth resize effect */
+    transition: all 0.3s ease;
 }
 
-/* Optional: Make logo slightly smaller when scrolling */
+/* Scroll Effect Adjustments */
+.navbar-scrolled .navbar-brand {
+    font-size: 28px !important; /* Slightly smaller on scroll */
+}
+
 .navbar-scrolled .logo-img {
-    height: 45px; 
+    height: 40px; /* Slightly smaller on scroll */
 }
 
-/* Mobile Adjustment */
+/* Mobile View Adjustments */
 @media (max-width: 991px) {
+    .navbar-brand {
+        font-size: 24px !important;
+    }
     .logo-img {
-        height: 40px; /* Smaller on mobile to fit the bar */
+        height: 35px;
     }
 }
 
